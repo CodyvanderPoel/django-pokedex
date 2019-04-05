@@ -19,5 +19,6 @@ from pokedex_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.Home.as_view(), name='home'),
+    path('pokedex/', views.Home.as_view(), name='home'),
+    path('pokedex/details/<id>', views.Details.as_view(), name='info'),
 ]
