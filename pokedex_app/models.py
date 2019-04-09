@@ -10,6 +10,7 @@ class Pokemon(models.Model):
     height = models.CharField(max_length=100)
     weight = models.CharField(max_length=100)
     image = models.URLField()
+    desc = models.TextField()
     def __str__(self):
         return self.name
     class Meta:
