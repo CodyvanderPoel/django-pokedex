@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokedex</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <form action="/pokedex/filter" method="GET">
+                    <div class="col s4 m4 l4">
+                        <label for="normal">
+                            <span class="flow-text">Normal</span>
+                            <input id="normal" type="checkbox">
+                        </label><br>
+                        <label class="flow-text" for="type">Fire</label>
+                        <input name="type" value="fire" type="checkbox"><br>
+                        <label class="flow-text" for="type">Water</label>
+                        <input name="type" value="water" type="checkbox"><br>
+                        <label class="flow-text" for="type">Electric</label>
+                        <input name="type" value="electric" type="checkbox"><br>
+                        <label class="flow-text" for="type">Grass</label>
+                        <input name="type" value="grass" type="checkbox"><br>
+                        <label class="flow-text" for="type">Ice</label>
+                        <input name="type" value="ice" type="checkbox"><br>
+                    </div>
+                    <div class="col s4 m4 l4">
+                        <label class="flow-text" for="type">Fighting</label>
+                        <input name="type" value="fighting" type="checkbox"><br>
+                        <label class="flow-text" for="type">Poison</label>
+                        <input name="type" value="poison" type="checkbox"><br>
+                        <label class="flow-text" for="type">Ground</label>
+                        <input name="type" value="ground" type="checkbox"><br>
+                        <label class="flow-text" for="type">Flying</label>
+                        <input name="type" value="flying" type="checkbox"><br>
+                        <label class="flow-text" for="type">Psychic</label>
+                        <input name="type" value="psychic" type="checkbox"><br>
+                        <label class="flow-text" for="type">Bug</label>
+                        <input name="type" value="bug" type="checkbox"><br>
+                    </div>
+                    <div class="col s4 m4 l4">
+                        <label class="flow-text" for="type">Rock</label>
+                        <input name="type" value="rock" type="checkbox"><br>
+                        <label class="flow-text" for="type">Ghost</label>
+                        <input name="type" value="ghost" type="checkbox"><br>
+                        <label class="flow-text" for="type">Dragon</label>
+                        <input name="type" value="dragon" type="checkbox"><br>
+                        <label class="flow-text" for="type">Dark</label>
+                        <input name="type" value="dark" type="checkbox"><br>
+                        <label class="flow-text" for="type">Steel</label>
+                        <input name="type" value="steel" type="checkbox"><br>
+                        <label class="flow-text" for="type">Fairy</label>
+                        <input name="type" value="fairy" type="checkbox"><br>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn">Filter</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <ul class="collection">
+        {% for p in pokemon%}
+        <a href="{% url 'info' p.id %}">
+            <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
+                {{p.pokemonType}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+    </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
