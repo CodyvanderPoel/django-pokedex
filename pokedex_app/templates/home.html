@@ -13,13 +13,14 @@
 
     {% block content %}
     <div class="container">
-        <h1 class="center-align">Welcome to the Pokédex!</h1>
         <ul class="collection">
             {% for p in pokemon%}
-            <li class="collection-item"><a href="{% url 'info' p.id %}">{{p.name}}</a></li>
+            <a href="{% url 'info' p.id %}">
+                <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
+                    {{p.pokemonType}}</li>
+            </a>
             {% endfor %}
         </ul>
-
     </div>
     {% endblock %}
 </body>
