@@ -18,63 +18,95 @@
                 <form action="/pokedex/filter" method="GET">
                     <div class="col s4 m4 l4">
                         <label for="normal">
-                            <span class="flow-text">Normal</span>
-                            <input id="normal" type="checkbox">
+                            <input name="type" id="normal" value="normal" type="checkbox" />
+                            <span>Normal</span>
                         </label><br>
-                        <label class="flow-text" for="type">Fire</label>
-                        <input name="type" value="fire" type="checkbox"><br>
-                        <label class="flow-text" for="type">Water</label>
-                        <input name="type" value="water" type="checkbox"><br>
-                        <label class="flow-text" for="type">Electric</label>
-                        <input name="type" value="electric" type="checkbox"><br>
-                        <label class="flow-text" for="type">Grass</label>
-                        <input name="type" value="grass" type="checkbox"><br>
-                        <label class="flow-text" for="type">Ice</label>
-                        <input name="type" value="ice" type="checkbox"><br>
+                        <label for="fire">
+                            <input name="type" id="fire" value="fire" type="checkbox" />
+                            <span>Fire</span>
+                        </label><br>
+                        <label for="water">
+                            <input name="type" id="water" value="water" type="checkbox" />
+                            <span>Water</span>
+                        </label><br>
+                        <label for="electric">
+                            <input name="type" id="electric" value="electric" type="checkbox" />
+                            <span>Electric</span>
+                        </label><br>
+                        <label for="grass">
+                            <input name="type" id="grass" value="grass" type="checkbox" />
+                            <span>Grass</span>
+                        </label><br>
+                        <label for="ice">
+                            <input name="type" id="ice" value="ice" type="checkbox" />
+                            <span>Ice</span>
+                        </label><br>
                     </div>
                     <div class="col s4 m4 l4">
-                        <label class="flow-text" for="type">Fighting</label>
-                        <input name="type" value="fighting" type="checkbox"><br>
-                        <label class="flow-text" for="type">Poison</label>
-                        <input name="type" value="poison" type="checkbox"><br>
-                        <label class="flow-text" for="type">Ground</label>
-                        <input name="type" value="ground" type="checkbox"><br>
-                        <label class="flow-text" for="type">Flying</label>
-                        <input name="type" value="flying" type="checkbox"><br>
-                        <label class="flow-text" for="type">Psychic</label>
-                        <input name="type" value="psychic" type="checkbox"><br>
-                        <label class="flow-text" for="type">Bug</label>
-                        <input name="type" value="bug" type="checkbox"><br>
+                        <label for="fighting">
+                            <input name="type" id="fighting" value="fighting" type="checkbox" />
+                            <span>Fighting</span>
+                        </label><br>
+                        <label for="poison">
+                            <input name="type" id="poison" value="poison" type="checkbox" />
+                            <span>Poison</span>
+                        </label><br>
+                        <label for="ground">
+                            <input name="type" id="ground" value="ground" type="checkbox" />
+                            <span>Ground</span>
+                        </label><br>
+                        <label for="flying">
+                            <input name="type" id="flying" value="flying" type="checkbox" />
+                            <span>Flying</span>
+                        </label><br>
+                        <label for="psychic">
+                            <input name="type" id="psychic" value="psychic" type="checkbox" />
+                            <span>Psychic</span>
+                        </label><br>
+                        <label for="bug">
+                            <input name="type" id="bug" value="bug" type="checkbox" />
+                            <span>Bug</span>
+                        </label><br>
                     </div>
                     <div class="col s4 m4 l4">
-                        <label class="flow-text" for="type">Rock</label>
-                        <input name="type" value="rock" type="checkbox"><br>
-                        <label class="flow-text" for="type">Ghost</label>
-                        <input name="type" value="ghost" type="checkbox"><br>
-                        <label class="flow-text" for="type">Dragon</label>
-                        <input name="type" value="dragon" type="checkbox"><br>
-                        <label class="flow-text" for="type">Dark</label>
-                        <input name="type" value="dark" type="checkbox"><br>
-                        <label class="flow-text" for="type">Steel</label>
-                        <input name="type" value="steel" type="checkbox"><br>
-                        <label class="flow-text" for="type">Fairy</label>
-                        <input name="type" value="fairy" type="checkbox"><br>
+                        <label for="rock">
+                            <input name="type" id="rock" value="rock" type="checkbox" />
+                            <span>Rock</span>
+                        </label><br>
+                        <label for="ghost">
+                            <input name="type" id="ghost" value="ghost" type="checkbox" />
+                            <span>Ghost</span>
+                        </label><br>
+                        <label for="dragon">
+                            <input name="type" id="dragon" value="dragon" type="checkbox" />
+                            <span>Dragon</span>
+                        </label><br>
+                        <label for="dark">
+                            <input name="type" id="dark" value="dark" type="checkbox" />
+                            <span>Dark</span>
+                        </label><br>
+                        <label for="steel">
+                            <input name="type" id="steel" value="steel" type="checkbox" />
+                            <span>Steel</span>
+                        </label><br>
+                        <label for="fairy">
+                            <input name="type" id="fairy" value="fairy" type="checkbox" />
+                            <span>Fairy</span>
+                        </label><br>
                     </div>
                     <br>
-                    <button type="submit" class="btn">Filter</button>
+                    <button type="submit" class="btn col s12 m12 l12">Filter</button>
             </div>
             </form>
         </div>
-    </div>
-    <ul class="collection">
-        {% for p in pokemon%}
-        <a href="{% url 'info' p.id %}">
-            <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
-                {{p.pokemonType}}</li>
-        </a>
-        {% endfor %}
-    </ul>
-    </div>
+        <ul class="collection">
+            {% for p in pokemon%}
+            <a href="{% url 'info' p.id %}">
+                <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
+                    {{p.pokemonType}}</li>
+            </a>
+            {% endfor %}
+        </ul>
     </div>
     {% endblock %}
 </body>
