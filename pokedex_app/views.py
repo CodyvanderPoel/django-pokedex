@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Pokemon
+from .models import Pokemon, Evolution
 from django.db.models import Q
 
 # Create your views here.
-
 
 class Home(View):
     def get(self, request):
@@ -21,8 +20,10 @@ class Details(View):
 
         pokemon = Pokemon.objects.get(id=id)
 
-        context = {"pokemon": pokemon}
-
+        context = {
+            "pokemon": pokemon,
+            "evolutions": pokemon.evolves_from_set.all()
+        }
         return render(request, 'details.html', context)
 
 
@@ -50,7 +51,7 @@ class Filter(View):
         query = request.GET.get("type")
 
         if query:
-            query_list = pokemon.filter(Q(pokemonType__contains=query))
+            query_list = pokemon.filter(Q(pokemonType__icontains=query))
             context = {"pokemon": query_list}
             return render(request, 'filter.html', context)
 
