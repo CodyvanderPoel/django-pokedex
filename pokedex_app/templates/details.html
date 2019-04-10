@@ -25,7 +25,9 @@
                     </div>
                 </div>
             </div>
-            <img class="col l3 m5 s6" src={{pokemon.image}}>
+            <div class="col l3 m5 s6 ">
+                <img class="col l12 m12 s12 right-align" src={{pokemon.image}}>
+            </div>
         </div>
         <div class="row">
             <div class="col l12 m12 s12">
@@ -33,6 +35,30 @@
                     <div class="card-content">
                         <span class="card-title">Description:</span>
                         <p class="card-action flow-text">{{pokemon.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <div class="grey lighten-3 card">
+                    <div class="card-content">
+                        <span class="card-title">Evolutions:</span>
+                        {% if evolutions %}
+                        {% for e in evolutions%}
+                        <div class="row">
+                            <p class="col l5 m5 s5 card-action flow-text">{{e.evolvesFrom}}</p>
+                            <p class="col l1 m1 s1 card-action flow-text">-></p>
+                            <p class="col l5 m5 s5 card-action flow-text right-align">{{e.evolvesInto}}</p>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="row">
+                            <p class="card-action flow-text">
+                                This Pokémon does not evolve!
+                            </p>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
 
