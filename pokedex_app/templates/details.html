@@ -47,6 +47,7 @@
                         {% if evolutions %}
                         {% for e in evolutions%}
                         <div class="row">
+                            <p class="col l12 m12 s12 card-action flow-text center-align">{{e.requirements}}</p>
                             <p class="col l5 m5 s5 card-action flow-text">{{e.evolvesFrom}}</p>
                             <p class="col l1 m1 s1 card-action flow-text">-></p>
                             <p class="col l5 m5 s5 card-action flow-text right-align">{{e.evolvesInto}}</p>
