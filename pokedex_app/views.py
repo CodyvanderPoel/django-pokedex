@@ -2,8 +2,16 @@ from django.shortcuts import render
 from django.views import View
 from .models import Pokemon, Evolution
 from django.db.models import Q
+from django.shortcuts import redirect
 
 # Create your views here.
+
+
+class Root(View):
+    def get(self, request):
+
+        return redirect("home")
+
 
 class Home(View):
     def get(self, request):
