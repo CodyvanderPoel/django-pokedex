@@ -13,20 +13,24 @@
 <body>
     <div class="white container">
         <div class="row">
-            <div class="col l5 m5 s8">
-                <div class="grey lighten-3 card">
-                    <div class="card-content">
-                        <span class="card-title">{{pokemon.name}}</span>
-                        <p>National #: {{pokemon.nationalId}}</p>
-                        <p>Type: {{pokemon.pokemonType}}</p>
-                        <p>Species: {{pokemon.species}} Pokemon</p>
-                        <p>Height: {{pokemon.height}}</p>
-                        <p>Weight: {{pokemon.weight}} lbs</p>
+            <div class="valign-wrapper">
+                <div>
+                    <img class="col l11 m12 s12" src={{pokemon.image}}>
+                </div>
+                <div class="valign-wrapper col l5 m12 s12 ">
+                    <div class="grey lighten-3 card">
+                        <div class="card-content flow-text">
+                            <span>
+                                {{pokemon.name}}
+                            </span>
+                            <p>National #: {{pokemon.nationalId}}</p>
+                            <p>Type: {{pokemon.pokemonType}}</p>
+                            <p>Species: {{pokemon.species}} Pokemon</p>
+                            <p>Height: {{pokemon.height}}</p>
+                            <p>Weight: {{pokemon.weight}} lbs</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col l3 m5 s6 ">
-                <img class="col l12 m12 s12 right-align" src={{pokemon.image}}>
             </div>
         </div>
         <div class="row">
