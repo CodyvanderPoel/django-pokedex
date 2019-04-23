@@ -26,6 +26,8 @@ SECRET_KEY = 'ah!&url6f**s4j$jq*0!zo^^^s9=x33ag9ug107w85&(&ep%fg'
 
 ALLOWED_HOSTS = ["*"]
 
+DEBUG = 'DEBUG' in os.environ
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -121,7 +123,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'pokedex_app/static'), )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
