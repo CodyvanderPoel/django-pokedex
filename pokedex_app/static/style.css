@@ -8,11 +8,8 @@ a {
     color: #0000ee;
     text-decoration: none;
 }
-a:hover{
+a:hover {
     color: black;
-}
-li {
-    list-style: none;
 }
 .container {
     max-width: 80%;
@@ -22,6 +19,20 @@ li {
     grid-gap: 10px;
 }
 
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item {
+    color: white;
+    padding: 0.5rem;
+}
+.nav-item:hover {
+    color: lightskyblue;
+}
+.home {
+    font-size: 3rem;
+}
 .card {
     width: 210px;
     border: 1px solid lightgrey;
