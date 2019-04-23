@@ -1,0 +1,19 @@
+/* Styling goes here */
+.container {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+
+.card {
+    width: 210px;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+}
