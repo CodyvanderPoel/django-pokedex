@@ -6,6 +6,13 @@ html {
 
 a {
     color: #0000ee;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+li {
+    list-style: none;
 }
 .container {
     max-width: 80%;
@@ -21,9 +28,13 @@ a {
     padding: 20px;
     text-align: center;
     background-color: #ffffff;
+    display: flex;
     vertical-align: text-bottom;
 }
 
+.card:hover {
+    box-shadow: 0 0 6px grey;
+}
 .card img {
     max-width: 100%;
 }
