@@ -21,7 +21,7 @@ a {
     padding: 20px;
     text-align: center;
     background-color: #ffffff;
-    display: flex;
+    vertical-align: text-bottom;
 }
 
 .card img {
