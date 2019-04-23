@@ -7,8 +7,8 @@
 
 <div class="container">
     {% for p in pokemon%}
-    <a href="{% url 'info' p.id %}">
-        <div class="card">
+    <a class="card" href="{% url 'info' p.id %}">
+        <div>
             <img src={{p.image}} alt={{p.name}}>
 
             <p class="center-align">Name: {{p.name}}</p>
