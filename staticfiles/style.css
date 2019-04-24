@@ -11,6 +11,17 @@ a {
 a:hover {
     color: black;
 }
+input::-webkit-input-placeholder {
+    color: black !important;
+}
+
+input::-moz-placeholder {
+    color: black !important;
+}
+
+input:-ms-input-placeholder {
+    color: black !important;
+}
 .container {
     max-width: 80%;
     margin: auto;
@@ -18,7 +29,9 @@ a:hover {
     flex-wrap: wrap;
     grid-gap: 10px;
 }
-
+.detail-container {
+    background-color: white;
+}
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
@@ -42,28 +55,40 @@ a:hover {
     display: flex;
     vertical-align: text-bottom;
 }
-
 .card:hover {
     box-shadow: 0 0 6px grey;
 }
 .card img {
     max-width: 100%;
 }
-
-input::-webkit-input-placeholder {
-    color: black !important;
+.info-card {
+    width: 210px;
+    border: 1px solid black; 
+    border-radius: 2px;
+    padding: 20px;
+    background-color: lightgrey;
 }
-
-input::-moz-placeholder {
-    color: black !important;
+.card-title{
+    font-size: 2rem;
 }
-
-input:-ms-input-placeholder {
-    color: black !important;
+.card-details{
+    font-size: 1.5rem;
+}
+.evolution-chart{
+    display: flex;
+    margin: 3px;
 }
 .background-blue {
     background-color: #90caf9;
 }
 .background-red {
     background-color: #f44336;
+    border-radius:3px;
+}
+.back-button{
+    color:white;
+    font-size: 1.75rem;
+}
+.back-div{
+    max-width:100%
 }
