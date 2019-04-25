@@ -7,14 +7,16 @@
 
 <div class="container">
     {% for p in pokemon%}
-    <a class="card" href="{% url 'info' p.id %}">
-        <div>
-            <img src={{p.image}} alt={{p.name}}>
+    <div class="hover-container">
+        <a class="card" href="{% url 'info' p.id %}">
+            <div>
+                <img src={{p.image}} alt={{p.name}}>
 
-            <p class="center-align">Name: {{p.name}}</p>
-            <p class="center-align">Type: {{p.pokemonType}}</p>
-        </div>
-    </a>
+                <p class="center-align">Name: {{p.name}}</p>
+                <p class="center-align">Type: {{p.pokemonType}}</p>
+            </div>
+        </a>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
