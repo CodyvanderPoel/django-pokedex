@@ -2,72 +2,64 @@
 {% block content %}
 <div class="detail-container">
     <div>
-        <div>
-            <div>
-                <img src={{pokemon.image}}>
+        <div class="grid_img">
+            <img src={{pokemon.image}}>
+        </div>
+        <div class="grid_info">
+            <div class="info-card">
+                <span class="card-title">
+                    {{pokemon.name}}
+                </span>
+                <div class="card-details">
+                    <p>National #: {{pokemon.nationalId}}</p>
+                    <p>Type: {{pokemon.pokemonType}}</p>
+                    <p>Species: {{pokemon.species}} Pokemon</p>
+                    <p>Height: {{pokemon.height}}</p>
+                    <p>Weight: {{pokemon.weight}} lbs</p>
+                </div>
             </div>
-            <div>
+        </div>
+    </div>
+    <div>
+        <div class="grid_desc">
+            <div class="info-card">
+                <p class="card-title">Description:</p>
+                <p>{{pokemon.desc}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="grid_evo">
+            <div class="info-card">
+                <span class="card-title">Evolutions:</span>
+                {% if evolutions %}
+                {% for e in evolutions%}
                 <div>
-                    <div class="info-card">
-                        <span class="card-title">
-                            {{pokemon.name}}
-                        </span>
-                        <div class="card-details">
-                            <p>National #: {{pokemon.nationalId}}</p>
-                            <p>Type: {{pokemon.pokemonType}}</p>
-                            <p>Species: {{pokemon.species}} Pokemon</p>
-                            <p>Height: {{pokemon.height}}</p>
-                            <p>Weight: {{pokemon.weight}} lbs</p>
-                        </div>
+                    <p>{{e.requirements}}</p>
+                    <div class="evolution-chart">
+                        <p>{{e.evolvesFrom}}</p>
+                        <p>-></p>
+                        <p>{{e.evolvesInto}}</p>
                     </div>
                 </div>
+                {% endfor %}
+                {% else %}
+                <div>
+                    <p>
+                        This Pokémon does not evolve!
+                    </p>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div>
-        <div>
-            <div>
-                <div class="info-card">
-                    <p class="card-title">Description:</p>
-                    <p>{{pokemon.desc}}</p>
-                </div>
-            </div>
+    <div class="grid_back">
+        <div class="back-div background-red">
+            <a href="/pokedex" role="button" class="back-button">Go Back</a>
         </div>
     </div>
-    <div>
-        <div>
-            <div>
-                <div class="info-card">
-                    <span class="card-title">Evolutions:</span>
-                    {% if evolutions %}
-                    {% for e in evolutions%}
-                    <div>
-                        <p>{{e.requirements}}</p>
-                        <div class="evolution-chart">
-                            <p>{{e.evolvesFrom}}</p>
-                            <p>-></p>
-                            <p>{{e.evolvesInto}}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% else %}
-                    <div>
-                        <p>
-                            This Pokémon does not evolve!
-                        </p>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+</div>
 
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="back-div background-red">
-        <a href="/pokedex" role="button" class="back-button">Go Back</a>
-    </div>
-</div>
 {% endblock %}
 </body>
 
