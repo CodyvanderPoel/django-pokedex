@@ -30,6 +30,8 @@ input:-ms-input-placeholder {
     grid-gap: 10px;
 }
 .detail-container {
+    max-width: 80%;
+    margin: auto;
     background-color: white;
 }
 .nav-wrapper {
@@ -54,27 +56,34 @@ input:-ms-input-placeholder {
     background-color: #ffffff;
     display: flex;
     vertical-align: text-bottom;
+    transition: all 0.32s ease-in-out;
 }
 .card:hover {
-    box-shadow: 0 0 6px grey;
+    box-shadow: 0 0 6px black;
+    transform: scale(1.08);
+    color: #f44336;
+}
+.hover-container {
+    width: 230px;
+    padding: 15px;
 }
 .card img {
     max-width: 100%;
 }
 .info-card {
     width: 210px;
-    border: 1px solid black; 
+    border: 1px solid black;
     border-radius: 2px;
     padding: 20px;
     background-color: lightgrey;
 }
-.card-title{
+.card-title {
     font-size: 2rem;
 }
-.card-details{
+.card-details {
     font-size: 1.5rem;
 }
-.evolution-chart{
+.evolution-chart {
     display: flex;
     margin: 3px;
 }
@@ -83,12 +92,13 @@ input:-ms-input-placeholder {
 }
 .background-red {
     background-color: #f44336;
-    border-radius:3px;
+    border-radius: 3px;
 }
-.back-button{
-    color:white;
+.back-button {
+    color: white;
     font-size: 1.75rem;
 }
-.back-div{
-    max-width:100%
+.back-div {
+    max-width: 100%;
+    margin: 5px;
 }
