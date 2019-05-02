@@ -13,100 +13,105 @@
 
     {% block content %}
     <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
+        <div>
+            <div class="filter-container">
                 <form action="/pokedex/filter" method="GET">
-                    <div class="col s4 m4 l4">
+                    <div>
                         <label for="normal">
-                            <input name="type" id="normal" value="normal" type="checkbox" />
+                            <input name="type" id="normal" value="normal" type="radio" />
                             <span>Normal</span>
                         </label><br>
                         <label for="fire">
-                            <input name="type" id="fire" value="fire" type="checkbox" />
+                            <input name="type" id="fire" value="fire" type="radio" />
                             <span>Fire</span>
                         </label><br>
                         <label for="water">
-                            <input name="type" id="water" value="water" type="checkbox" />
+                            <input name="type" id="water" value="water" type="radio" />
                             <span>Water</span>
                         </label><br>
                         <label for="electric">
-                            <input name="type" id="electric" value="electric" type="checkbox" />
+                            <input name="type" id="electric" value="electric" type="radio" />
                             <span>Electric</span>
                         </label><br>
                         <label for="grass">
-                            <input name="type" id="grass" value="grass" type="checkbox" />
+                            <input name="type" id="grass" value="grass" type="radio" />
                             <span>Grass</span>
                         </label><br>
                         <label for="ice">
-                            <input name="type" id="ice" value="ice" type="checkbox" />
+                            <input name="type" id="ice" value="ice" type="radio" />
                             <span>Ice</span>
                         </label><br>
                     </div>
-                    <div class="col s4 m4 l4">
+                    <div>
                         <label for="fighting">
-                            <input name="type" id="fighting" value="fighting" type="checkbox" />
+                            <input name="type" id="fighting" value="fighting" type="radio" />
                             <span>Fighting</span>
                         </label><br>
                         <label for="poison">
-                            <input name="type" id="poison" value="poison" type="checkbox" />
+                            <input name="type" id="poison" value="poison" type="radio" />
                             <span>Poison</span>
                         </label><br>
                         <label for="ground">
-                            <input name="type" id="ground" value="ground" type="checkbox" />
+                            <input name="type" id="ground" value="ground" type="radio" />
                             <span>Ground</span>
                         </label><br>
                         <label for="flying">
-                            <input name="type" id="flying" value="flying" type="checkbox" />
+                            <input name="type" id="flying" value="flying" type="radio" />
                             <span>Flying</span>
                         </label><br>
                         <label for="psychic">
-                            <input name="type" id="psychic" value="psychic" type="checkbox" />
+                            <input name="type" id="psychic" value="psychic" type="radio" />
                             <span>Psychic</span>
                         </label><br>
                         <label for="bug">
-                            <input name="type" id="bug" value="bug" type="checkbox" />
+                            <input name="type" id="bug" value="bug" type="radio" />
                             <span>Bug</span>
                         </label><br>
                     </div>
-                    <div class="col s4 m4 l4">
+                    <div>
                         <label for="rock">
-                            <input name="type" id="rock" value="rock" type="checkbox" />
+                            <input name="type" id="rock" value="rock" type="radio" />
                             <span>Rock</span>
                         </label><br>
                         <label for="ghost">
-                            <input name="type" id="ghost" value="ghost" type="checkbox" />
+                            <input name="type" id="ghost" value="ghost" type="radio" />
                             <span>Ghost</span>
                         </label><br>
                         <label for="dragon">
-                            <input name="type" id="dragon" value="dragon" type="checkbox" />
+                            <input name="type" id="dragon" value="dragon" type="radio" />
                             <span>Dragon</span>
                         </label><br>
                         <label for="dark">
-                            <input name="type" id="dark" value="dark" type="checkbox" />
+                            <input name="type" id="dark" value="dark" type="radio" />
                             <span>Dark</span>
                         </label><br>
                         <label for="steel">
-                            <input name="type" id="steel" value="steel" type="checkbox" />
+                            <input name="type" id="steel" value="steel" type="radio" />
                             <span>Steel</span>
                         </label><br>
                         <label for="fairy">
-                            <input name="type" id="fairy" value="fairy" type="checkbox" />
+                            <input name="type" id="fairy" value="fairy" type="radio" />
                             <span>Fairy</span>
                         </label><br>
                     </div>
                     <br>
-                    <button type="submit" class="btn col s12 m12 l12">Filter</button>
+                    <button type="submit">Filter</button>
             </div>
             </form>
         </div>
-        <ul class="collection">
-            {% for p in pokemon%}
-            <a href="{% url 'info' p.id %}">
-                <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
-                    {{p.pokemonType}}</li>
+        <br>
+        {% for p in pokemon%}
+        <div class="hover-container">
+            <a class="card" href="{% url 'info' p.id %}">
+                <div>
+                    <img src={{p.image}} alt={{p.name}}>
+
+                    <p class="center-align">Name: {{p.name}}</p>
+                    <p class="center-align">Type: {{p.pokemonType}}</p>
+                </div>
             </a>
-            {% endfor %}
-        </ul>
+        </div>
+        {% endfor %}
     </div>
     {% endblock %}
 </body>
