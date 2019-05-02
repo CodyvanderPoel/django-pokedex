@@ -23,14 +23,18 @@
                 </form>
             </div>
         </div>
-        <ul class="collection">
-            {% for p in pokemon%}
-            <a href="{% url 'info' p.id %}">
-                <li class="grey lighten-2 collection-item">Name: {{p.name}} <br> Type:
-                    {{p.pokemonType}}</li>
+        {% for p in pokemon%}
+        <div class="hover-container">
+            <a class="card" href="{% url 'info' p.id %}">
+                <div>
+                    <img src={{p.image}} alt={{p.name}}>
+
+                    <p class="center-align">Name: {{p.name}}</p>
+                    <p class="center-align">Type: {{p.pokemonType}}</p>
+                </div>
             </a>
-            {% endfor %}
-        </ul>
+        </div>
+        {% endfor %}
     </div>
     {% endblock %}
 </body>
