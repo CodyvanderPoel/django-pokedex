@@ -33,6 +33,14 @@ input:-ms-input-placeholder {
     max-width: 80%;
     margin: auto;
     background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.filter-container {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; 
 }
 .nav-wrapper {
     display: flex;
