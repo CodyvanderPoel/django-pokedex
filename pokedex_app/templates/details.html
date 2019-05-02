@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% block title %}Pokedex | Entry#: {{pokemon.nationalId}} {% endblock title %}
 {% block content %}
-{% block title %}Pokedex | Entry#: {{pokemon.nationalId}}{% endblock title %}
-<div class="detail-container">
-    <div>
-        <div class="grid_img">
+
+<div class="container">
+    <div class="detail-container">
+        <div class="image">
             <img src={{pokemon.image}}>
         </div>
-        <div class="grid_info">
+        <div class="info">
             <div class="info-card">
                 <span class="card-title">
                     {{pokemon.name}}
@@ -21,16 +22,16 @@
             </div>
         </div>
     </div>
-    <div>
-        <div class="grid_desc">
+    <div class="detail-container">
+        <div class="desc">
             <div class="info-card">
                 <p class="card-title">Description:</p>
                 <p>{{pokemon.desc}}</p>
             </div>
         </div>
     </div>
-    <div>
-        <div class="grid_evo">
+    <div class="detail-container">
+        <div class="evol">
             <div class="info-card">
                 <span class="card-title">Evolutions:</span>
                 {% if evolutions %}
@@ -54,10 +55,12 @@
             </div>
         </div>
     </div>
-    <div class="grid_back">
-        <div class="back-div background-red">
-            <a href="/pokedex" role="button" class="back-button">Go Back</a>
-        </div>
+    <div class="back_btn">
+        <a href="/pokedex" role="button" class="back-button">
+            <div class="back-div background-red">
+                Go Back
+            </div>
+        </a>
     </div>
 </div>
 
