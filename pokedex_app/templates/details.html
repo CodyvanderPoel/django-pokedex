@@ -21,46 +21,46 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="detail-container">
-        <div class="desc">
-            <div class="info-card">
-                <p class="card-title">Description:</p>
-                <p>{{pokemon.desc}}</p>
+        <div class="content-box">
+            <div class="content">
+                <div class="info-card">
+                    <p class="card-title">Description:</p>
+                    <p>{{pokemon.desc}}</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="detail-container">
-        <div class="evol">
-            <div class="info-card">
-                <span class="card-title">Evolutions:</span>
-                {% if evolutions %}
-                {% for e in evolutions%}
-                <div>
-                    <p>{{e.requirements}}</p>
-                    <div class="evolution-chart">
-                        <p>{{e.evolvesFrom}}</p>
-                        <p>-></p>
-                        <p>{{e.evolvesInto}}</p>
+        <div class="content-box">
+            <div class="content">
+                <div class="info-card">
+                    <span class="card-title">Evolutions:</span>
+                    {% if evolutions %}
+                    {% for e in evolutions%}
+                    <div>
+                        <p>{{e.requirements}}</p>
+                        <div class="evolution-chart">
+                            <p>{{e.evolvesFrom}}</p>
+                            <p>-></p>
+                            <p>{{e.evolvesInto}}</p>
+                        </div>
                     </div>
+                    {% endfor %}
+                    {% else %}
+                    <div>
+                        <p>
+                            This Pokémon does not evolve!
+                        </p>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endfor %}
-                {% else %}
-                <div>
-                    <p>
-                        This Pokémon does not evolve!
-                    </p>
-                </div>
-                {% endif %}
             </div>
         </div>
-    </div>
-    <div class="back_btn">
-        <a href="/pokedex" role="button" class="back-button">
-            <div class="back-div background-red">
-                Go Back
-            </div>
-        </a>
+        <div class="back_btn">
+            <a href="/pokedex" role="button" class="back-button">
+                <div class="back-div background-red">
+                    Go Back
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 
